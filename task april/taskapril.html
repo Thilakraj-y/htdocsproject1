@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+    <link rel="stylesheet" href="/css/tasksttylr.css">
+</head>
+
+<body>
+    <div class="amd1">
+        <h1 class="pro1">IT Software <br>Institute</h1>
+        <h1></h1>
+        <div class="amd2">
+            <div class="amd3">
+                <h2>sign up as <br>Fresher</h2>
+    
+                <div class="userdetails">
+                    <div class="inputbox">
+                        <label for="name">Student Name:</label>
+                        <input type="text" pattern="[a-z]" name="shop_name" placeholder="Enter Shop Name" id="fname">
+                    </div>
+    
+                    <div class="inputbox">
+                        <label for="name">DOB:</label>
+                        <input type="date" name="owner_name" id="date">
+                    </div>
+                    <div class="inputbox">
+                        <label for="name">age:</label>
+                        <input type="text" name="owner_name" placeholder="Enter Age" id="age">
+                    </div>
+    
+                    <div class="inputbox">
+                        <label for="name">Mobile Number:</label>
+                        <input type="text" pattern="[0-9]" name="mobile_number" placeholder="Enter Mobile Number" id="mobile">
+                    </div >
+    
+                    <div class="inputbox">
+                        <label for="name">E-mail:</label>
+                        <input type="email" name="email" placeholder="Enter Email" id="email">
+                    </div>
+    
+                    <div class="inputbox">
+                        <label for="name">Any Work Experience :</label>
+                        <input type="radio" name="gender" >Yes
+                        <input type="radio" name="gendrer">No
+                    </div>
+    
+                    <div class="inputbox">
+                        <label for="name">Qualification :</label>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value="">bsc</option>
+                            <option value="">bcom</option>
+                            <option value="">bba</option>
+                        </select>
+                    </div>
+    
+                    <div class="inputbox">
+                        <label for="name">Graduation Year :</label>
+                        <input type="date" name="address" placeholder="Enter Address" id="graduation">
+                    </div>
+                    
+                    <div class="inputbox">
+                        <label for="name">Gender:</label>
+                        <input type="radio" name="gender" >Male
+                        <input type="radio" name="gendrer">Female
+                    </div>
+                    <div class="inputbox">
+                        <label for="name">Address</label>
+                        <input type="text" name="landmark" placeholder="Landmark" id="address">
+                    </div>
+                    <div class="inputbox">
+                        <label for="name">Technologyknown:</label>
+                        <input type="checkbox">html
+                        <input type="checkbox">css
+                        <input type="checkbox">javascript
+                    </div>
+                    <div class="innputbox">
+                        <label for="name">The role you are looking for:</label>
+                        <input type="radio" class="radio">Software engineer
+                        <input type="radio"class="radio">Tester
+                        <input type="radio"class="radio">devops Engineer
+                    </div>
+                   
+                </div>
+                <div class="terms"> 
+                    <input type="checkbox">I Agree with all terms & conditions
+                </div>
+
+                <div class="button"><button onclick="register()" type="submit">Sign Up</button></div>
+    
+            </div>
+        </div>
+    </div>
+    <p id="sad"><a href="/new.html"></a>table</p>
+    
+    <script>
+        function register(){
+            let sname=document.getElementById("fname").value
+            let dob=document.getElementById("date").value
+            let age=document.getElementById("age").value
+            let number=document.getElementById("mobile").value
+            let email=document.getElementById("email").value
+            let graduation=document.getElementById("graduation").value
+            let address=document.getElementById("address").value
+            // document.getElementById("rowcollection").innerHTML="<tr>"+"<td>"+sname+"</td>"+"<td>"+dob+"</td>"+"<td>"+age+"</td>"+"<td>"+number+"</td>"+"<td>"+email+"</td>"+"<td>"+graduation+"</td>"+"<td>"+address+"</td>"+"</tr>";
+            var object={sname,dob,age,number,email,graduation,address}
+            console.log(object)
+        }          
+    </script>
+</body>
+</html>
+
+
+
+
+    

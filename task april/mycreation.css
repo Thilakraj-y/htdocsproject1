@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.amd2{
+    height: 530px;
+    width: 700px;
+    background-color: rgb(245, 247, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.amd1{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+    /* margin-left: 10%; */
+    height: 530px;
+    width:80%;
+    background-color:rgba(35, 99, 238, 0.6);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+.amd3{
+    background-color: rgb(194, 141, 77);
+    /* margin-top: 50px; */
+    /* margin-left: 90px; */
+    height: 450px;
+    width: 600px;
+}
+body{
+    background-image: url(/images/950x534-blue-abstract-bubbles-free-website-background-image.jpg);
+    display: flex;
+    justify-content: center;
+}
+.amd4{
+    margin-top: 150px;
+    background-color: coral;
+    height: 70px;
+    /* width: 300px; */
+    /* margin-left: 20px; */
+}
+.pro1{
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px;
+    margin-right: auto;
+    color: aliceblue;
+    height: 100px;
+}
+/* .subamd1{
+    background-color: aqua;
+    height: 80px;
+    width: 100px;
+    
+} */
+/* .userdetails{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} */
+input{
+    width: 100%;
+}
