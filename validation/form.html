@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <link rel="stylesheet" href="/form.css">
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .container {
+            background-color: aqua;
+            height: 450px;
+            width: 600px;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .userinput {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+
+        }
+
+        .inputbox {
+            margin: 20px 0 15px 0;
+            width: 280px;
+        }
+
+        .input {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+
+        }
+
+        button {
+            width: 100px;
+            background-color: chartreuse;
+        }
+
+        .inputbox1 {
+            width: 100%;
+            padding: 20px;
+
+        }
+
+        .name {
+            margin-right: 40px;
+        }
+    </style>
+    <div class="container">
+        <!-- <form action=""> -->
+        <div>
+            <div id="head1">Sign up as <br> Fresher</div>
+            <div class="userinput">
+                <div class="inputbox">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter_Name">
+                </div>
+                <div class="inputbox">
+                    <label for="name">DOB</label>
+                    <input type="date" name="dob" id="date">
+                </div>
+                <div class="inputbox">
+                    <label for="name">Phone Number</label>
+                    <input type="text" name="name" id="number" minlength="10" placeholder="Enter_Number">
+                </div>
+                <div class="inputbox">
+                    <label for="name">E-mail</label>
+                    <input type="text" name="name" id="mail" placeholder="Enter E-mail">
+                </div>
+                <div class="inputbox">
+                    <label for="name">Qualification</label>
+                    <select name="qualify" id="qselect">
+                        <option value="">selectoption</option>
+                        <option value="B.com">B.com</option>
+                        <option value="B.sc">B.sc</option>
+                        <option value="BE">BE</option>
+                    </select>
+                </div>
+                <div class="inputbox">
+                    <label for="name">Department</label>
+                    <input type="text" name="name" id="department" placeholder="Enter Department">
+                </div>
+                <div class="inputbox">
+                    <label for="name">Graduation_Year</label>
+                    <input type="date" id="gdate" name="year">
+                </div>
+                <div class="inputbox">
+                    <label for="name">Gender</label>
+                    <input type="radio" name="gender">Male
+                    <input type="radio" name="gender">Female
+
+                </div>
+                <div class="inputbox1">
+                    <label for="name" id="thi">Technologyknown:</label>
+                    <input type="checkbox">html
+                    <input type="checkbox">css
+                    <input type="checkbox">javascript
+                </div>
+                <div class="inputbox1">
+                    <label for="name">The role you are looking for:</label>
+                    <input type="radio" class="radio">Software engineer
+                    <input type="radio" class="radio">Tester
+                    <input type="radio" class="radio">devops Engineer
+                </div>
+
+
+
+            </div>
+            <center>
+                <div><button onclick="register()">signup</button></div>
+            </center>
+            <!-- </form> -->
+        </div>
+    </div>
+    <script>
+        // function register() {
+        //     let sname = document.getElementById("name").value;
+        //     let dob = document.getElementById("date").value;
+        //     let mobile = document.getElementById("number").value;
+        //     let mail = document.getElementById("mail").value;
+        //     let qualification = document.getElementById("qselect").value;
+        //     let depat = document.getElementById("department").value;
+        //     let gyear = document.getElementById("gdate").value;
+        //     // let object=[{sname,dob,mobile,mail,qualification,depat,gyear}]
+        //     // console.log(object);
+
+        //     if(sname.length==0 || !isNaN(sname)){
+        //         alert("fill name")
+        //     }
+        //     if(dob.length==0){
+        //         alert("please fill the date")
+        //     }
+        //     if(mobile.length==0|| isNaN(mobile)){
+        //         alert("please fill number")
+        //     }
+        //     if(mail.length==0){
+        //         alert("fill valid email")
+        //     }
+        //     if(!isNaN(qualification)){
+        //         alert("please select one")
+        //     }
+        //     if(depat.length==0||!isNaN(depat)){
+        //         alert("fill department")
+        //     }
+        //     if(gyear.length==0){
+        //         alert("please fill date")
+        //     }
+        // }
+    </script>
+
+</body>
+
+</html>

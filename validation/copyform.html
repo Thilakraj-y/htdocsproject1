@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copyform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 600px;
+            height: 300px;
+        }
+
+        body {
+            display: flex;
+            justify-content:space-between;
+            margin-top: 60px;
+            background-color: cornflowerblue;
+        }
+
+        #tt {
+            width: 73%;
+        }
+        #gdate {
+            width: 73%;
+        }
+        #date {
+            width: 170px;
+        }
+
+
+        #click {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .align {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .r1 {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .lablealign{
+            display: flex;
+            justify-content: flex-start;
+        }
+        #thg {
+            text-align: start;
+        }
+
+        #head1 {
+            padding: 20px 0 20px 0;
+            font-size: 30px;
+            font-weight: 700;
+            margin-left: 30px;
+        }
+        th{
+            width: 80px;
+        }
+
+        .formstyle {
+            background-color: dimgray;
+            width: 600px;
+            height: 550px;
+            border-radius: 10px;
+
+        }
+        .tk{
+            font-size: 17px;
+            font-weight: 600;
+            
+        }
+        #jkl{
+            margin-top: 50px;
+        }
+        .rl{
+            font-size: 17px;
+            font-weight: 600;
+            margin-left: 35px;
+        }
+        .known{
+            margin: 20px;
+        }
+        
+        .radio{
+            margin: 20px;
+        }
+       
+        button{
+            width: 150px;
+            border-radius: 10px;
+            height: 25px;
+            background-color: azure;
+            font-size: 15px;
+        }
+        #department{
+            width: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formstyle">
+
+        <div id="head1">Sign up as Fresher</div>
+        <div class="userinput">
+            <!-- <div class="inputbox"> -->
+            <table>
+                <tr>
+                    <th><label for="name" class="lablealign">Name</label></th>
+                    <th><input type="text" name="name" id="name" class="r1" onkeydown="return /[a-z]/i.test(event.key)"  placeholder="Enter_Name"></th>
+
+                    <th><label for="name" class="lablealign">DOB</label></th>
+                    <th><input type="date" name="dob" id="date" class="align"></th>
+                </tr>
+
+                <tr>
+                    <th><label for="name" class="lablealign">Phone Number</label></th>
+                    <th><input type="text" name="name" id="number" class="r1" maxlength="10" placeholder="Enter_Number"></th>
+
+                    <th><label for="name" class="lablealign">E-mail</label></th>
+                    <th><input type="text" name="name" id="mail" class="align" placeholder="Enter E-mail"></th>
+                </tr>
+
+                <tr>
+
+                    <th><label for="name" class="lablealign">Qualification</label></th>
+                    <th><select id="tt" class="r1">
+                            <option value="">--selectoption--</option>
+                            <option value="B.com">B.com</option>
+                            <option value="B.sc">B.sc</option>
+                            <option value="BE">BE</option>
+                        </select></th>
+
+                    <th><label for="name" class="lablealign">Department</label></th>
+                    <th><select class="align" id="department">
+                        <option value="">--selectoption--</option>
+                    </select></th>
+                </tr>
+
+                <tr>
+                    <th><label for="name" class="lablealign">Graduation_Year</label></th>
+                    <th><input type="date" id="gdate" class="r1" name="year"></th>
+
+                    <th><label for="name" class="lablealign">Gender</label></th>
+                    <th id="thg">
+                        <input type="radio" id="genderMale" value="male" name="gender">Male
+                        <input type="radio" id="genderFemale" value="female" name="gender">Female
+                    </th>
+                </tr>
+            </table>
+            <div class="rl">
+                <label for="name">Any Experience:</label>
+                <input type="radio" name="any" id="expy" value="yes" class="radio">Yes
+                <input type="radio" name="any" id="expn" value="no" class="radio">No
+            </div>
+
+            <div class="tk"> 
+                <label for="name" id="thi">Technologyknown:</label>
+                <input type="checkbox" name="planguages" id="techhtml" value="html" class="known">html
+                <input type="checkbox" name="planguages" id="techcss" value="css" class="known">css
+                <input type="checkbox" name="planguages" id="techjs" value="js" class="known">javascript
+            </div>
+            
+            <div class="rl">
+                <label for="name">The role you <br> are looking for:</label>
+                <input type="radio" name="job" id="jobs" value="softwareengineer" class="radio">Software engineer
+                <input type="radio" name="job" id="jobt" value="tester" class="radio">Tester
+                <input type="radio" name="job" id="jobd" value="devopsengineer" class="radio">devops Engineer
+            </div>
+            <div id="click">
+                <button onclick="registration()" class="edit">signup</button>
+
+                <button onclick="getData()" class="edit123">getting data</button>
+
+            </div>
+            <!-- </form> -->
+        </div>
+    </div>
+    <div class="sb">
+        <input type="text" name="search" id="typing" placeholder="searchbyname">
+        <button onclick="typeName()">search</button>
+    </div>
+    <table id="jkl">
+        <tr>
+            <th>NAME</th>
+            <th>DOB</th>
+            <th>NUMBER</th>
+            <th>EMAIL</th>
+            <th>QUALIFY</th>
+            <th>DEPART</th>
+            <th>DRADU</th>
+            <th>GENDER</th>
+            <th>EXP</th>
+            <th>LANG</th>
+            <th>JOB</th>
+        </tr>
+
+        <tbody id="getDataRowChange">
+
+        </tbody>
+    </table>
+    <script>
+        
+        
+        
+        document.getElementById("tt").addEventListener("change",function(){
+            var degreecourselist={
+                "B.com":[
+                    "commerce",
+                    "computer application",
+                    "personal accounting",
+                    "charted account"
+                ],
+                "B.sc":[
+                    "computer science",
+                    "mathamatics",
+                    "zology",
+                    "botony"
+                ],
+                "BE":[
+                    "ECE",
+                    "EEE",
+                    "MECH",
+                    "CIVIL",
+                ]
+            };
+            var optionlist="";
+            degreecourselist[document.getElementById("tt").value].map(function(list){
+                optionlist+="<option>"+list+"</option>"
+            })
+            document.getElementById("department").innerHTML=optionlist
+        })
+        
+        
+        async function getData() {
+                    var dataGetFirebase=await fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=thilakCollection");
+                    var finalDataGet=await dataGetFirebase.json();
+                    console.log(finalDataGet);
+
+                    for(i=0; i<finalDataGet.length; i++){
+                        document.getElementById("getDataRowChange").innerHTML+="<tr>"+
+                                                                                    "<td>"+finalDataGet[i].Name+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Dateofbirth+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Number+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Emailid+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Qualify+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Department+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Graduation+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Gender+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Experience+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].language+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Job+"</td>"+
+                                                                                    // "<td>"+finalDataGet[i].collectionId+"</td>"
+                                                                              "</tr>"
+                    }
+                    
+
+        }
+
+        
+        
+        async function registration() {
+            let sname = document.getElementById("name").value;
+            let dob = document.getElementById("date").value;
+            let mobile = document.getElementById("number").value;
+            let mail = document.getElementById("mail").value;
+            let qualification = document.getElementById("tt").value;
+            let depart = document.getElementById("department").value;
+            let gyear = document.getElementById("gdate").value;
+            let error=0;
+
+            // let gender = document.querySelector('input[name="gender"]:checked');
+            // console.log(gender.value);
+
+            // let experience = document.querySelector('input[name="any"]:checked');
+            // let job = document.querySelector('input[name="job"]:checked');
+
+            // if(sname.length==0 || !isNaN(sname)){ //onkeydown insert the input field
+            if(sname.length==0){
+                alert("Please fill name")
+                error++
+            }
+            if(dob.length==0){
+                alert("please fill the DOB")
+                error++
+
+            }
+            // if(mobile.length==0){  //onkeydown insert the input field onkeydown="return /[0-9]/i.test(event.key)"
+            if(mobile.length==0|| isNaN(mobile)){ 
+                alert("please fill the number")
+                error++
+
+            }
+            if(mail.length==0||(!mail.includes("@")||!mail.includes("."))){
+                alert("fill the valid email")
+                error++
+
+            }
+            if(!qualification){
+                alert("please select one Qualification")
+                error++
+
+            }
+            if(!depart){
+                alert("fill the department")
+                error++
+
+            }
+            if(gyear.length==0){
+                alert("please fill graduation date")
+                error++
+
+            }
+            let male = document.getElementById("genderMale").checked;
+            let feMale = document.getElementById("genderFemale").checked;
+            let gender="";
+            if(male == true){
+                gender="male"
+            }else if(feMale == true){
+                gender="female"
+            }else{
+            alert("Please fill gender")
+            error++
+
+            }
+
+            let expYes = document.getElementById("expy").checked;
+            let expNo = document.getElementById("expn").checked;
+            let experience="";
+            if(expYes==true){
+                experience="Yes"
+            }else if(expNo==true){
+                experience="No"
+            }else{
+                alert("please select experience")
+                error++
+
+            }
+
+            var checkboxtrue=[];
+            function checkboxcheck(thilak){
+                let checkboxvalue=document.getElementById("tech"+thilak).checked;
+                    if(checkboxvalue){
+                        checkboxtrue.push(thilak);
+                    }
+            };
+            var checkboxidscheck=["html","css","js"]
+            for(let i=0 ; i<checkboxidscheck.length ; i++){
+                checkboxcheck(checkboxidscheck[i])
+            }
+            if(!checkboxtrue.length){
+                alert("please select tech you know")
+                error++
+
+            }
+
+            let job1 = document.getElementById("expy").checked;
+            let job2 = document.getElementById("expn").checked;
+            let job3 = document.getElementById("expn").checked;
+            let jobRole="";
+            if(job1==true){
+                jobRole="softwareengineer"
+            }else if(job2==true){
+                jobRole="tester"
+            }else if(job3==true){
+                jobRole="devopsengineer"
+            }else{
+                alert("please select the job you are looking for")
+                error++
+
+
+            }
+            if(error==0){
+                var object={
+                            Name: sname,
+                            Dateofbirth:dob,
+                            Number:mobile,
+                            Emailid:mail,
+                            Qualify:qualification,
+                            Department:depart,
+                            Graduation:gyear,
+                            Gender:gender,
+                            Experience:experience,
+                            language:checkboxtrue,
+                            Job:jobRole,
+                            collectionId:"thilakCollection"
+                    };
+            }
+            
+                // console.log(object);
+                await fetch("https://rczversion2.herokuapp.com/api/addregistration",{
+                            method:"POST",
+                            headers:{
+                                'content-type':'application/json'
+                            },
+                            body:JSON.stringify(object)
+                })
+
+                
+
+        }
+        async function typeName(){
+            var dataGetFirebase=await fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=thilakCollection");
+                    var finalDataGet=await dataGetFirebase.json();
+
+            var filteringName=document.getElementById("typing").value;
+
+                for(i=0; i<finalDataGet.length; i++){
+                    if(finalDataGet[i].Name&&finalDataGet[i].Name.includes(filteringName)){
+                        document.getElementById("getDataRowChange").innerHTML+="<tr>"+
+                                                                                    "<td>"+finalDataGet[i].Name+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Dateofbirth+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Number+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Emailid+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Qualify+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Department+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Graduation+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Gender+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Experience+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].language+"</td>"+
+                                                                                    "<td>"+finalDataGet[i].Job+"</td>"+
+                                                                                    // "<td>"+finalDataGet[i].collectionId+"</td>"
+                                                                              "</tr>"
+                    }
+                }
+        }
+        
+    
+            // async function registration(){
+            //     var dataGotFromServer =  fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=thilakCollection ", {
+            //         method: 'GET',
+            //         headers: {
+            //             'Content-Type': 'application/json',
+            //         }
+            //     })
+
+
+
+
+                
+                        
+            //     
+            // };
+            
+
+
+
+
+
+            // let techKnown=checkboxtrue.toString();
+            // console.log(convert);
+
+
+
+
+           
+            // }
+            // const pushData=async()=>{
+            //     var get=await fetch("https://rczversion2.herokuapp.com/api/getregdata",{
+            //     method:"POST",
+            //     headers:{
+            //         'content-type':'application/json'
+            //     },
+                
+                    
+                
+            // })
+            // 
+            //     method:"POST",
+            //     headers:{
+            //         'content-type':'applicaion/json'
+            //     },
+            //     body: JSON.stringify(object)
+            // });
+
+                
+                // console.log(object);  
+
+
+            // console.log(job);
+            
+            // let language = document.querySelector('input[name="planguages"]:checked');
+            // let language = document.getElementsByName("planguages");
+                
+            // let html = document.getElementById("techhtml").checked;
+            // let css = document.getElementById("techcss").checked;
+            // let javascript = document.getElementById("techjs").checked;
+
+            // if(html==false && css==false && javascript==false){
+            //     alert("please select tech you known")
+            // }
+        
+    </script>
+
+</body>
+
+</html>

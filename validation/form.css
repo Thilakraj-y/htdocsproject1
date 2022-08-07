@@ -1,0 +1,11 @@
+/* 
+        function selected(qselect,dselect){
+            var qselect=document.getElementById(qselect);
+            var dselect=document.getElementById(dselect);
+            dselect.innerHTML="";
+            if(qselect.value=="Bcom"){
+                var optionArray =['ca|CA','pa|PA','it|IT'];
+            
+            }
+            onchange="selected(this.id,'dselect')"
+        } */
