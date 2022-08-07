@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopOwnerinFo</title>
+    <link rel="stylesheet" href="./css/enroll.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script>
+        function validateForm() {
+            var shopname = document.getElementById('shopname').value;
+            var owner = document.getElementById('ownername').value;
+            var number = document.getElementById('mobile').value;
+            var number_reg = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[ 0-9]{3}[-\s\.]?[ 0-9]{4,6}$/im;
+            var phnn  = number_reg.test(number);
+            var email = document.getElementById('email').value;
+            var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+            var w = regexEmail.test(email);
+            var location = document.getElementById('location').value;
+            var pincode = document.getElementById('pincode').value;
+            var address = document.getElementById('address').value;
+            var landmark = document.getElementById('landmark').value;
+            let error_arr = [];
+
+
+            if (shopname == "") {
+                $("#shop_error").css("display", "block");
+                error_arr.push("shop_error");
+            }
+            else {
+                $("#shop_error").css("display", "none");
+
+            }
+
+            if (owner == "") {
+                $("#owner_error").css("display", "block");
+                error_arr.push("owner_error");
+            }
+            else {
+                $("#owner_error").css("display", "none");
+            }
+
+            if (number == "") {
+                $("#number_error").css("display", "block");
+                error_arr.push("number_error")
+            }
+
+            else {
+                $("#number_error").css("display", "none")
+            }
+            if (document.getElementById('mobile').value != "") {
+                if (ph) {
+                    $("#number_error").css("display", "none");
+                }
+                else {
+                    $("#number_error").text("The phone number entered is invalid.");
+                    $("#number_error").css("display", "block");
+                    error_arr.push("number_error");
+
+                }
+            }
+            if (email == "") {
+                $("#email_error").css("display", "block");
+                error_arr.push("email_error");
+
+            }
+
+            else {
+
+                $("#email_error").css("display", "none");
+
+            }
+
+            if (document.getElementById('email').value != "") {
+                if (w) {
+                    $("#email_error").css("display", "none");
+                }
+                else {
+                    $("#email_error").text("The e-mail address entered is invalid.");
+                    $("#email_error").css("display", "block");
+                    error_arr.push("email_error");
+
+                }
+            }
+
+            if (location == "") {
+                $("#location_e").css("display", "block");
+                error_arr.push("location_e");
+            }
+            else {
+                $("#location_e").css("display", "none");
+
+            }
+
+            if (pincode == "") {
+                $("#pincode_e").css("display", "block");
+                error_arr.push("pincode_e");
+            }
+            else {
+                $("#pincode_e").css("display", "none");
+
+            }
+
+            if (address == "") {
+                $("#address_e").css("display", "block");
+                error_arr.push("address_e");
+            }
+            else {
+                $("#address_e").css("display", "none");
+
+            }
+
+            if (landmark == "") {
+                $("#landmark_e").css("display", "block");
+                error_arr.push("landmark_e");
+                alert("all field are mandatoriy")
+            }
+            else {
+                $("#landmark_e").css("display", "none");
+
+            }
+
+
+
+
+            if (error_arr.length > 0) {
+
+                return false;
+
+            }
+            else {
+                return true;
+
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="titleS">Shop Owner Info</div>
+
+        <form method="post" name="myForm" onsubmit="return validateForm()" action="email.php">
+
+            <div class="userdetails">
+                <div class="inputbox">
+                    <label for="name">order_id</label>
+                    <input type="text" pattern="[a-z]" name="shop_name" placeholder="Enter Shop Name" id="shopname">
+                    <span id="shop_error" class="error_msg">Shop Name is required</span>
+                </div>
+
+                <div class="inputbox">
+                    <label for="name">order_date</label>
+                    <input type="date" name="owner_name" placeholder="Enter Owner Name" id="ownername">
+                    <span id="owner_error" class="error_msg">Owner name is required</span>
+                </div>
+
+                <div class="inputbox">
+                    <label for="name">Mobile Number</label>
+                    <input type="text" pattern="[0-9]" name="mobile_number" placeholder="Enter Mobile Number" id="mobile">
+                    <span id="number_error" class="error_msg">Number is required</span>
+                </div >
+
+                <div class="inputbox">
+                    <label for="name">E-mail</label>
+                    <input type="email" name="email" placeholder="Enter Email" id="email">
+                    <span id="email_error" class="error_msg">Email is required</span>
+                </div>
+
+                <div class="inputbox">
+                    <label for="name">requested_by</label>
+                    <input type="text" name="location" placeholder="locaion" id="location">
+                    <span id="location_e" class="error_msg">Location is Required</span>
+                </div>
+
+                <div class="inputbox">
+                    <label for="name">delivey_date</label>
+                    <input type="text" name="pincode" placeholder="Pincode" id="pincode">
+                    <span id="pincode_e" class="error_msg">Pincode is required</span>
+                </div>
+
+                <div class="inputbox">
+                    <label for="name">place</label>
+                    <input type="text" name="address" placeholder="Enter Address" id="address">
+                    <span id="address_e" class="error_msg">Address is required</span>
+                </div>
+
+                <div class="inputbox">
+                    <label for="name">delivery_place</label>
+                    <input type="text" name="landmark" placeholder="Landmark" id="landmark">
+                    <span id="landmark_e" class="error_msg">Landmark is required</span>
+                </div>
+
+                <button type="submit">submit</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
+

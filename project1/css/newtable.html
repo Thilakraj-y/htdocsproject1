@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-image: url(/image/download.jpg); 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        h2 {
+            margin-left: 300px;
+        }
+
+        button {
+            margin-left: 300px;
+            width: 200px;
+            margin-bottom: 20px;
+            border-radius: 30px;
+            height:30px;
+            background-color: chartreuse;
+            font-size: 17px;
+        
+        }
+        button:hover{
+            color: black;
+            background: green;
+        }
+        input{
+            border-radius: 4px;
+            height: 20px;
+        }
+        div {
+            background-color: rgba(208, 211, 223, 0.363);
+            margin-top: 160px;
+            border-radius: 20px;
+            
+        }
+
+        table {
+            width: 800px;
+            height: 300px;
+            font-size: 19px;
+        
+        }
+
+        span {
+            display: none;
+            color: rgb(240, 52, 52);
+            font-size: 17px;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script>
+        function myfunction(){
+            alert("update successfully!");
+        }
+        function validateForm() {
+            var shopname = document.getElementById('shopname').value;
+            var owner = document.getElementById('ownername').value;
+            var email = document.getElementById('email').value;
+            var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+            var w = regexEmail.test(email);
+            var number = document.getElementById('phnumber').value;
+            var number_reg = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[ 0-9]{3}[-\s\.]?[ 0-9]{4,6}$/im;
+            var phnn = number_reg.test(number);
+            var address = document.getElementById('address').value;
+            var pincode = document.getElementById('pincode').value;
+            var location = document.getElementById('location').value;
+            var landmark = document.getElementById('landmark').value;
+            let error_arr = [];
+
+
+            if (shopname == "") {
+                $("#shop_error").css("display", "block");
+                error_arr.push("shop_error");
+            }
+            else {
+                $("#shop_error").css("display", "none");
+                    
+            }
+
+            if (owner == "") {
+                $("#owner_error").css("display", "block");
+                error_arr.push("owner_error");
+            }
+            else {
+                $("#owner_error").css("display", "none");
+            }
+
+            if (number == "") {
+                $("#ph_error").css("display", "block");
+                error_arr.push("ph_error")
+            }
+
+            else {
+                $("#ph_error").css("display", "none")
+            }
+
+            if (document.getElementById('phnumber').value != "") {
+                if (phnn) {
+                    $("#ph_error").css("display", "none");
+                }
+                else {
+                    $("#ph_error").text("The phone number is invalid.");
+                    $("#ph_error").css("display", "block");
+                    error_arr.push("ph_error");
+
+                }
+            }
+            if (email == "") {
+                $("#email_error").css("display", "block");
+                error_arr.push("email_error");
+
+            }
+
+            else {
+
+                $("#email_error").css("display", "none");
+
+            }
+
+            if (document.getElementById('email').value != "") {
+                if (w) {
+                    $("#email_error").css("display", "none");
+                }
+                else {
+                    $("#email_error").text("The e-mail address is invalid.");
+                    $("#email_error").css("display", "block");
+                    error_arr.push("email_error");
+
+                }
+            }
+
+            if (location == "") {
+                $("#location_error").css("display", "block");
+                error_arr.push("location_error");
+            }
+            else {
+                $("#location_error").css("display", "none");
+
+            }
+
+            if (pincode == "") {
+                $("#pincode_error").css("display", "block");
+                error_arr.push("pincode_error");
+            }
+            else {
+                $("#pincode_error").css("display", "none");
+
+            }
+
+            if (address == "") {
+                $("#address_error").css("display", "block");
+                error_arr.push("address_error");
+            }
+            else {
+                $("#address_error").css("display", "none");
+
+            }
+
+            if (landmark == "") {
+                $("#landmark_error").css("display", "block");
+                error_arr.push("landmark_error");
+            }
+            else {
+                $("#landmark_error").css("display", "none");
+
+            }
+
+
+
+
+            if (error_arr.length > 0) {
+
+                return false;
+
+            }
+            else {
+                return true;
+
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+    <div class="mydiv">
+        <form method="post" name="myForm" onsubmit="return validateForm()" action="email.php">
+            <h2>Shop Owner Info</h2>
+
+            <table>
+
+                <tr>
+                    <th><label for="name">shop Name </label></th>
+                    <th><input type="text" name="shopname" id="shopname"><br>
+                        <span id="shop_error" class="error_msg">Name is *Required</span>
+                    </th>
+
+                    <th><label for="name">Owner Name</label></th>
+                    <th><input type="text" name="ownername" id="ownername"><br>
+                        <span id="owner_error" class="error_msg">Name is *Required</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th><label for="name">Email</label></th>
+                    <th><input type="text" name="mail" id="email"><br>
+                        <span id="email_error" class="error_msg">Email is *Required</span>
+                    </th>
+                    <th><label for="name">Mobile Number</label></th>
+                    <th><input type="text" name="number" id="phnumber"><br>
+                        <span id="ph_error" class="error_msg">Number is *Required</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th><label for="name">Address</label></th>
+                    <th><input type="text" name="address" id="address"><br>
+                        <span id="address_error" class="error_msg">Address is *Required</span>
+                    </th>
+                    <th><label for="name">Pincode</label></th>
+                    <th><input type="text" name="pincode" id="pincode"><br>
+                        <span id="pincode_error" class="error_msg">Pincode is *Required</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th><label for="name">Location</label></th>
+                    <th><input type="text" name="location" id="location"><br>
+                        <span id="location_error" class="error_msg">Location is *Required</span>
+                    </th>
+                    <th><label for="name">Landmark</label></th>
+                    <th><input type="text" name="landmark" id="landmark"><br>
+                        <span id="landmark_error" class="error_msg">Landmark is *Required</span>
+                    </th>
+                </tr>
+            </table>
+            <button onsubmit="myfunction()">SUBMIT</button>
+        </form>
+    </div>
+</body>
+
+</html>
